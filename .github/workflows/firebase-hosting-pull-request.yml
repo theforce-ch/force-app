@@ -20,6 +20,8 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - run: |
+          npm i && 
+          npm run test &&
           REACT_APP_STORAGE_BUCKET=${react_app_storage_bucket} 
           REACT_APP_STAGE=${react_app_stage} 
           REACT_APP_PROJECT_ID=${react_app_project_id} 
@@ -27,8 +29,8 @@ jobs:
           REACT_APP_DATABASE_URL=${react_app_database_url} 
           REACT_APP_AUTH_DOMAIN=${react_app_auth_domain} 
           REACT_APP_API_KEY=${react_app_api_key} 
-          REACT_APP_APP_ID=${react_app_app_id} 
-          npm i && npm run test && npm run build && echo ${react_app_stage} | sed 's/./& /g'
+          REACT_APP_APP_ID=${react_app_app_id}
+          npm run build
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'

@@ -15,4 +15,6 @@ jobs:
       foo: '${{secrets.REACT_APP_STAGE}}'
     steps:
     - name: "show variables"
-      run: echo ${foo} | sed 's/./& /g'
+      run: echo ${INPUT_REPOTOKEN} | sed 's/./& /g'
+      with:
+        repoToken: '${{ secrets.REACT_APP_STAGE }}'
