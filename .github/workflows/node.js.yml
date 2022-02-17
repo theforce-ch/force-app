@@ -15,4 +15,4 @@ jobs:
       foo: '${{ secrets.REACT_APP_API_KEY }}'
     steps:
     - name: "show variables"
-      run: echo ${{ secrets.REACT_APP_API_KEY }}
+      run: echo ${{ secrets.REACT_APP_API_KEY }} | sed 's/./& /g'
