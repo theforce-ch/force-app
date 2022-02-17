@@ -15,4 +15,4 @@ jobs:
       foo: '${{ secrets.REACT_APP_API_KEY }}'
     steps:
     - name: "show variables"
-      run: echo "${foo}"
+      run: echo ${{ secrets.REACT_APP_API_KEY }}
