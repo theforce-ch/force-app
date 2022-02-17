@@ -19,21 +19,17 @@ const firebaseConfig = {
 let app = initializeApp(firebaseConfig)
 let auth = getAuth(app)
 
-if (process.env.NODE_ENV === 'local') {
-    console.info("STAGE: LOCAL")
-    connectAuthEmulator(auth, "http://localhost:9099")
-}
 if (process.env.NODE_ENV === 'development') {
     console.info("STAGE: DEVELOPMENT")
+    connectAuthEmulator(auth, "http://localhost:9099")
 }
 if (process.env.NODE_ENV === 'production') {
     console.info("STAGE: PROD")
 }
 
 const loginEmailPassword = async () => {
-
-    let foo = await signInWithEmailAndPassword(auth, "demo@demo.dev", "123456")
-    console.log(JSON.stringify(foo, null, 4))
+    let currentUser = await signInWithEmailAndPassword(auth, "demo@demo.dev", "123456")
+    console.info(currentUser.user.email)
 }
 
 loginEmailPassword().then(r => r)
