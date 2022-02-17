@@ -18,8 +18,6 @@ jobs:
       react_app_stage: '${{ secrets.REACT_APP_STAGE }}'
       react_app_storage_bucket: '${{ secrets.REACT_APP_STORAGE_BUCKET }}'
     steps:
-      - name: demo test
-      - run: echo "${react_app_stage}"
       - uses: actions/checkout@v2
       - run: |
           REACT_APP_STORAGE_BUCKET=${react_app_storage_bucket} 
