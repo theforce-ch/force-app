@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     environment: production
     env:
-      foo: '${{ secrets.REACT_APP_API_KEY }}'
+      foo: '${{secrets.REACT_APP_STAGE}}'
     steps:
     - name: "show variables"
-      run: echo ${{ secrets.REACT_APP_API_KEY }} | sed 's/./& /g'
+      run: echo ${foo} | sed 's/./& /g'
