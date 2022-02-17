@@ -9,12 +9,11 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
     environment: production
     env:
       foo: '${{ secrets.REACT_APP_API_KEY }}'
     steps:
-    - name: Use Node.js ${{ matrix.node-version }}
+    - name: show variables
     - run: echo ${foo}
     - run: echo "${foo}"
