@@ -21,8 +21,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "test:coverage": "npm test -- --coverage",
     "eject": "react-scripts eject",
-    "emulator": "firebase emulators:start --only auth"
+    "emulator:auth": "firebase emulators:start --only auth"
   },
   "eslintConfig": {
     "extends": [
