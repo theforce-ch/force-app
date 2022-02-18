@@ -3,13 +3,13 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-//import {initializeApp} from "firebase/app";
+import {initializeApp} from "firebase/app";
 import {getAuth, signInWithEmailAndPassword} from "firebase/auth"
-//import {firebaseConfig} from "./config/oauth";
+import {firebaseConfig} from "./config/oauth";
 import {Emulator} from "./config/emulator";
 
-//let app = initializeApp(firebaseConfig)
-let auth = getAuth()
+let app = initializeApp(firebaseConfig)
+let auth = getAuth(app)
 Emulator(auth)
 
 const loginEmailPassword = async () => {
