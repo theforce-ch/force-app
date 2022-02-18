@@ -17,7 +17,7 @@ const loginEmailPassword = async () => {
     console.info(currentUser.user.email)
 }
 
-await loginEmailPassword()
+loginEmailPassword().then(r => r)
 
 ReactDOM.render(
     <React.StrictMode>
